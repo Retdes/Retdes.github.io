@@ -1,0 +1,50 @@
+.review
+    padding: 45px 0 60px 0
+    text-align: center
+    position: relative
+    .title 
+        margin-bottom: 20px
+    &__subtitle
+        font-size: 18px
+        font-weight: 700
+        color: #3a3a3a
+    &__title-descr
+        margin: 15px 0 20px 0
+    &__descr
+        margin: 0 auto
+        font-size: 14px
+        font-weight: 300
+        color: #3a3a3a
+    img
+        margin: 0 auto
+    .slick-arrow
+        padding: 0
+        background-color: #ffffff00
+        border: none
+        outline: none
+        top: 20%
+    .slick-next
+        position: absolute
+        left: calc(50% - -90px)
+        transform: translateX(-50%)
+        border: none
+        background-color: #ffffff00
+        overflow: visible
+    .slick-prev
+        position: absolute
+        left: calc(50% - 90px)
+        transform: translateX(-50%)
+        border: none
+        background-color: #ffffff00
+        z-index: 1
+
+            
+.slick-slide, .slick-active
+    transform: scale(0.6)
+    opacity: 0.5
+    transition: 0.3s all
+    outline: none
+.slick-center
+    transform: scale(1)
+    opacity: 1
+    outline: none

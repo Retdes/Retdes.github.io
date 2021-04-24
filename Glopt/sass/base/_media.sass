@@ -1,0 +1,365 @@
+.burgermenu
+    display: none
+@media ( max-width: 1200px )
+    .promo
+        &__title
+            font-size: 62px
+        &__subtitle
+            font-size: 38px
+        &__services
+            width: 75%;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 20px auto;
+        &__block
+            width: 360px
+            margin: 20px auto
+        nav
+            width: 90%
+            margin: 0 auto
+        &__info
+            display: none
+    .agent 
+        &__descr
+            width: 100%
+    .manager
+        &__descr
+            width: 100%
+    .prices
+        &__text
+            width: 70%
+        &__cards
+            flex-wrap: wrap
+            width: 60%
+            margin: 0 auto
+        &__card
+            margin-top: 40px
+        &__border
+            margin: 70px auto;
+            width: 80%;
+        &__inputs
+            width: 100%
+            padding: 0 20px
+            input
+                width: 250px
+    .advantages
+        &__wrapper
+            width: 90%
+            text-align: center
+            flex-wrap: wrap
+            margin: 0 auto
+        &__blocks
+            width: 50%
+            margin: 0 auto
+        &__block
+            width: 400px
+            flex-direction: column
+            align-items: center
+            margin: 30px auto
+        &__descr
+            width: 100%
+        &__icon
+            margin: 0
+    .work
+        &__wrapper
+            display: flex;
+            justify-content: center;
+            margin: auto auto;
+            flex-wrap: wrap;
+            width: 80%;
+        &__block
+            margin-top: 50px
+            &:nth-child(1)
+                margin-right: 40px
+    .scheme
+        &__wrapper
+            justify-content: space-evenly;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            width: 90%
+    .footer
+        nav
+            width: 90%
+            margin: 0 auto
+        &__info
+            margin: 0
+        .information_container
+            width: 65%
+            margin: 0 auto
+    .container 
+        width: 100%
+@media ( max-width: 992px )
+    .prices
+        &__inputs
+            width: 100%
+            padding: 0 10px
+@media ( max-width: 768px )
+    .burgermenu
+        display: block
+        width: 60%
+        height: 100%
+        background-color: #000000d0
+        position: fixed
+        top: 0%
+        z-index: 1
+        transition: 0.4s all
+        &-hidden
+            width: 0%
+            .burger__navigation
+                display: none
+        .burger__navigation
+            font-size: 23px
+            text-align: center
+            margin-top: 40px
+            .burger__puncts
+                display: block
+                width: 50%
+                border-bottom: 1px solid #ffffff
+                color: #ffffff
+                line-height: 70px
+                margin: 0 auto
+                cursor: pointer
+                &:nth-last-child(1)
+                    border: none
+                    margin: auto 
+        @keyframes deg
+            0%
+                transform: rotate(0deg)
+            100%
+                transform: rotate(360deg)
+    .background
+        background-color: #000000
+        display: block
+        width: 100%
+        height: 60px
+        position: relative
+        .burger
+            position: absolute
+            top: 50%
+            right: 6%
+            transform: translateY(-50%)
+            transform-origin: 60% 50%
+            transfomr-origin: center
+            span
+                display: block
+                width: 30px
+                height: 2px
+                margin-bottom: 7px
+                background-color: white
+                transform-origin: 90% 50%
+                transition: 0.3s all
+                &:nth-child(2)
+                    width: 100%
+                &:nth-child(3)
+                    margin: 0
+            &-active
+                animation: deg 2.5s ease infinite
+                top: 40%
+                span
+                    transform: rotate(-180deg)
+                    &:nth-child(1)
+                        transform: rotate(-45deg)
+                    &:nth-child(2)
+                        width: 0%
+                    &:nth-child(3)
+                        transform: rotate(45deg)            
+    .promo
+        &__navigation
+            display: none
+        &__titles-small
+            font-size: 20px
+            margin: 10px 0 10px 0
+        &__title
+            font-size: 40px
+        &__subtitle
+            font-size: 30px
+            margin-bottom: 30px
+        &__decoration
+            .line
+                width: 270px
+        &__block
+            width: 240px
+    .work
+        &__text
+            width: 90%
+    .question
+        padding: 20px 0
+        &__cards
+            width: 100%
+            height: 345px
+        form
+            width: 80%;
+            margin: 0 auto
+    .footer
+        &__block
+            font-size: 14px
+            a
+                display: none
+        &__info
+            font-size: 13px
+            span
+                font-size: 14px
+    .advantages
+        &__block
+            width: 280px
+    .prices
+        &__cards
+            width: 80%
+        &__inputs
+            width: 47%
+            padding: 0 19px 
+        .ring-orange
+            bottom: 65%
+        .button-send
+            bottom: calc(-7% - -10px)
+    .title
+        font-size: 20px
+    .descr-big, .descr-white
+        font-size: 18px
+    .review
+        .slick-arrow
+            top: 15%
+    .button
+        &:hover
+            background-color: $main-color
+@media ( max-width: 720px )
+    .footer
+        .information_container
+            width: 85%
+        nav
+            width: 95%
+    .promo
+        &__titles-small
+            margin-top: 30px
+@media ( max-width: 576px )
+    .promo
+        padding: 20px 0 40px 0
+        &__decoration
+            .line
+                width: 230px
+        &__block
+            margin: 10px auto
+        &__services
+            img
+                margin-bottom: 15px
+        &__btn
+            margin-top: 20px
+    .advantages__block
+        width: 220px
+    .work
+        &__block
+            &:nth-child(1)
+                margin-right: 0
+        &__textblock
+            margin-top: 15px
+    .prices
+        &__cards
+            width: 95%
+        &__inputs
+            width: 60%
+    .scheme
+        padding: 30px 0
+        &__puncts
+            margin-top: 20px
+    .review
+        padding: 25px 0 50px
+    .question
+        &__cards
+            height: 420px
+        form
+            input
+                width: 100%
+                margin: 7.5px 0
+                &:nth-child(1)
+                    margin-top: 20px
+            textarea
+                margin-top: 7.5px
+    .footer
+        nav
+            flex-direction: column
+            text-align: center
+        &__descr
+            margin: 0
+        &__info
+            align-items: center
+            margin-top: 10px
+        &__button
+            margin-top: 10px
+        hr
+            width: 80%
+@media ( max-width: 425px )
+    .promo
+        &__title
+            font-size: 30px
+        nav
+            align-items: start
+        &__subtitle
+            line-height: 35px
+        &__decoration
+            .line
+                width: 180px
+    .advantages
+        &__blocks
+            width: 80%
+        &__block
+            width: 300px
+        &__text
+            margin-top: 10px
+    .prices
+        &__card
+            margin: 40px auto 0 auto
+        &__inputs
+            width: 85%
+    .review
+        &__inner
+            .slick-track
+                margin-top: 20px
+    .footer
+        .information_container
+            flex-wrap: wrap
+            justify-content: center
+            align-items: center
+            .time, .politics, .author
+                margin: 5px
+    .burgermenu
+        .burger__navigation
+            .burger__puncts
+                font-size: 18px
+                width: 70%
+                line-height: 50px
+@media ( max-width: 375px )
+    .promo 
+        nav
+            img
+                width: 70px
+        &__titles-small
+            font-size: 17px
+            line-height: 20px
+        &__title
+            font-size: 30px
+            line-height: 40px
+            margin-bottom: 10px
+        &__subtitle
+            font-size: 20px
+            line-height: 30px
+        &__decoration
+            .line
+                width: 140px
+    .advantages
+        &__wrapper
+            width: 100%
+        &__blocks
+            width: 80%
+        &__block
+            width: 260px
+    .prices
+        &__inputs
+            width: 100%
+@media ( max-width: 320px )
+    .prices
+        &__inputs
+            input
+                width: 210px
+    .background
+        height: 40px
+    
