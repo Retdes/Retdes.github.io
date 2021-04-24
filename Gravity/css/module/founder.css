@@ -1,0 +1,19 @@
+.founder {
+    margin-top: 350px;
+}
+
+.founder__title {
+    margin-top: 40px;
+}
+
+.founder__user {
+    margin-top: 65px;
+}
+
+.founder__user img {
+    margin-right: 35px;
+}
+
+.founder__user span {
+    display: block;
+}

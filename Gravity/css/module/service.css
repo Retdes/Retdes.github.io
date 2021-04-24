@@ -1,0 +1,52 @@
+.service__road {
+    margin-top: 100px;
+}
+
+.service__title {
+    max-width: 600px;
+}
+
+.service__title,
+.service__list {
+    margin-top: 40px;
+}
+
+.service__list ul li {
+    padding: 0px;
+    list-style-type: none;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 28px;
+    color: #222222;
+    opacity: 0.5;
+    margin: 0px 0px 25px 0px;
+}
+
+.service__content {
+    flex: 0 0 auto;
+    opacity: 0.1;
+    width: 25%;
+    height: 500px;
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+    -o-transition: 0.5s all;
+}
+
+.service__content img {
+    width: 100%;
+    height: 100%;
+}
+
+.showed {
+    flex: 0 0 auto;
+    height: 500px;
+    width: 75%;
+    opacity: 1;
+}
+
+.service__slider {
+    margin-top: 50px;
+}

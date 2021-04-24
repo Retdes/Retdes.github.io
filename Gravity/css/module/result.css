@@ -1,0 +1,40 @@
+.result {
+    margin-top: 200px;
+}
+
+.result__image-wrapper {
+    position: relative;
+}
+
+.result__image,
+.result__work-image {
+    position: absolute;
+}
+
+.result__work-image {
+    left: 15%;
+    top: 25%;
+}
+
+.result__image {
+    left: -10%;
+}
+
+.result__puncts {
+    margin-top: 60px;
+}
+
+.result__puncts div {
+    margin: 30px 0px 0px 0px;
+}
+
+.result__punct {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #000000;
+    margin-left: 30px;
+}

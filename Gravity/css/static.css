@@ -1,0 +1,92 @@
+* {
+    font-family: 'Fira Sans', sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+    background-color: #E5E5E5;
+}
+
+.descr {
+    margin-top: 30px;
+    font-size: 18px;
+    line-height: 28px;
+    color: #222222;
+    opacity: 0.7;
+    line-height: 25px;
+}
+
+.sub_title {
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 50px;
+}
+
+.button-slide {
+    display: inline-block;
+    cursor: pointer;
+    transition: 0.2s all;
+    -webkit-transition: 0.2s all;
+    -moz-transition: 0.2s all;
+    -ms-transition: 0.2s all;
+    -o-transition: 0.2s all;
+}
+
+.section-name {
+    display: block;
+    margin-top: 145px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #8F8F8F;
+    opacity: 0.7;
+}
+
+.button {
+    width: 190px;
+    height: 50px;
+    color: #fff;
+    text-transform: uppercase;
+    background: #3726F2;
+    border-radius: 0px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    -ms-border-radius: 0px;
+    -o-border-radius: 0px;
+    letter-spacing: 3px;
+    font-size: 14px;
+}
+
+.name {
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 32px;
+    color: #222222;
+}
+
+.skills {
+    font-size: 18px;
+    line-height: 28px;
+    color: #222222;
+    opacity: 0.7;
+}
+
+
+.active {
+    background-color: #424242;
+}
+
+.hidden {
+    position: absolute;
+    top: -999%;
+    opacity: 0.5;
+    pointer-events: none;
+    z-index: -99;
+    transition: 1s all;
+    -webkit-transition: 1s all;
+    -moz-transition: 1s all;
+    -ms-transition: 1s all;
+    -o-transition: 1s all;
+}
