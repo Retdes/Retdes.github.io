@@ -1,0 +1,182 @@
+[
+    {
+        "pages": [
+            {
+                "id": 1,
+                "type": "Landing Page",
+                "show": false,
+                "ProjectName": "Food",
+                "sourceUrl": "https://retdes.github.io/Food/",
+                "imgUrl": "./images/webp/1.webp",
+                "html5": true,
+                "css3": true,
+                "js": true,
+                "mobileVersion": false,
+                "scss": false,
+                "less": false
+            },
+            {
+                "id": 2,
+                "type": "Landing Page",
+                "show": true,
+                "ProjectName": "Irvas Window",
+                "sourceUrl": "https://retdes.github.io/Window/",
+                "imgUrl": "./images/webp/10.webp",
+                "html5": true,
+                "css3": true,
+                "js": true,
+                "mobileVersion": true,
+                "scss": false,
+                "less": false
+            },
+            {
+                "id": 3,
+                "type": "Landing Page",
+                "show": true,
+                "ProjectName": "Gravity",
+                "sourceUrl": "https://retdes.github.io/Gravity/",
+                "imgUrl": "./images/webp/3.webp",
+                "html5": true,
+                "css3": true,
+                "js": true,
+                "mobileVersion": true,
+                "scss": false,
+                "less": false
+            },
+            {
+                "id": 4,
+                "type": "Landing Page",
+                "show": true,
+                "ProjectName": "Global Opt",
+                "sourceUrl": "https://retdes.github.io/Glopt/",
+                "imgUrl": "./images/webp/2.webp",
+                "html5": true,
+                "css3": true,
+                "js": true,
+                "mobileVersion": true,
+                "scss": false,
+                "less": false
+            },
+            {
+                "id": 5,
+                "type": "Landing Page",
+                "show": true,
+                "ProjectName": "Pegasus",
+                "sourceUrl": "https://retdes.github.io/LpPegasus/",
+                "imgUrl": "./images/webp/4.webp",
+                "html5": true,
+                "css3": true,
+                "js": true,
+                "mobileVersion": true,
+                "scss": false,
+                "less": false
+            },
+            {
+                "id": 6,
+                "type": "Landing Page",
+                "show": true,
+                "ProjectName": "NoorSoft",
+                "sourceUrl": "https://retdes.github.io/NoorSoft/",
+                "imgUrl": "./images/webp/5.webp",
+                "html5": true,
+                "css3": true,
+                "js": true,
+                "mobileVersion": true,
+                "scss": false,
+                "less": false
+            },
+            {
+                "id": 7,
+                "type": "Landing Page",
+                "show": true,
+                "ProjectName": "Prengi",
+                "sourceUrl": "https://retdes.github.io/Prengi/",
+                "imgUrl": "./images/webp/6.webp",
+                "html5": true,
+                "css3": true,
+                "js": true,
+                "mobileVersion": true,
+                "scss": false,
+                "less": false
+            },
+            {
+                "id": 8,
+                "type": "Landing Page",
+                "show": true,
+                "ProjectName": "RunSmart",
+                "sourceUrl": "https://retdes.github.io/PulsMetrik/",
+                "imgUrl": "./images/webp/7.webp",
+                "html5": true,
+                "css3": true,
+                "js": true,
+                "mobileVersion": true,
+                "scss": false,
+                "less": false
+            },
+            {
+                "id": 9,
+                "type": "Landing Page",
+                "show": false,
+                "ProjectName": "Shopno",
+                "sourceUrl": "https://retdes.github.io/Shopno/",
+                "imgUrl": "./images/webp/8.webp",
+                "html5": true,
+                "css3": true,
+                "js": true,
+                "mobileVersion": false,
+                "scss": false,
+                "less": false
+            },
+            {
+                "id": 10,
+                "type": "Landing Page",
+                "show": true,
+                "ProjectName": "Uber Moscow",
+                "sourceUrl": "https://retdes.github.io/Uber/",
+                "imgUrl": "./images/webp/9.webp",
+                "html5": true,
+                "css3": true,
+                "js": false,
+                "mobileVersion": true,
+                "scss": false,
+                "less": false
+            },
+            {
+                "id": 11,
+                "type": "Landing Page",
+                "show": false,
+                "ProjectName": "WordPress Intensive",
+                "sourceUrl": "https://retdes.github.io/WordPressIntensive/",
+                "imgUrl": "./images/webp/11.webp",
+                "html5": true,
+                "css3": true,
+                "js": false,
+                "mobileVersion": false,
+                "scss": false,
+                "less": false
+            },
+            {
+                "id": 12,
+                "type": "Landing Page",
+                "show": true,
+                "ProjectName": "Cafena",
+                "sourceUrl": "https://retdes.github.io/Coffee/",
+                "imgUrl": "./images/webp/12.webp",
+                "html5": true,
+                "css3": true,
+                "js": true,
+                "mobileVersion": true,
+                "scss": false,
+                "less": false
+            }
+        ]
+    },
+    {
+        "contacts": {
+            "whatsapp": "https://wa.me/+905538871480",
+            "telegram": "https://telegram.me/retdes",
+            "e_mail": "mailto:alexbxkod@gmail.com",
+            "phone": "tel:+905538871480"
+        }
+    }
+]
