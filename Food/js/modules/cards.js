@@ -56,7 +56,7 @@ function cards() {
         return await res.json();
     };
 
-    getResource('http://localhost:3000/menu')
+    getResource('https://retdes.github.io/Food/db.json')
         .then(data => {
             data.forEach(({
                 img,

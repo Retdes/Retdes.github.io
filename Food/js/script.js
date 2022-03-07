@@ -11,7 +11,7 @@ import slider from './modules/slider';
 window.addEventListener('DOMContentLoaded', () => {
     tabs('.tabheader__item', '.tabcontent','.tabheader__items', 'tabheader__item_active');
     modal('[data-modal]', '.modal');
-    timer('.timer', '2020-11-10');
+    timer('.timer', '2023-11-10');
     cards();
     calc();
     forms();
