@@ -5,9 +5,10 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <meta name="author" content="Денис Исаев">
     <meta name="description" content="Простое Портфолио">
-    
     <meta property="og:image" content="//retdes.github.io/images/favicon/NekoForFavicon.png" />
     <meta property="og:image:secure_url" content="https://retdes.github.io/images/favicon/NekoForFavicon.png" />
     <meta property="og:image:type" content="./images/favicon/NekoForFavicon.png" />
@@ -16,7 +17,6 @@
     <meta property="og:description" content="SSBMb3ZlIENhdHMhIDwzCtCvINC70Y7QsdC70Y4g0LrQvtGC0L7QsiEgPDM=">
     <meta property="og:title" content="Works Presentation">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="apple-touch-icon" sizes="180x180" href="./images/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon/favicon-16x16.png">
@@ -25,13 +25,27 @@
     <link rel="stylesheet" href="libs/bootstrap/css/bootstrap-reboot.min.css">
     <link rel="stylesheet" href="css/all.min.css">
     <link rel="stylesheet" href="libs/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/preloader.css">
+    <script src="./js/preloader.js"></script>
     <link rel="stylesheet" href="css/sytle.css">
     <link rel="stylesheet" href="css/media.css">
 </head>
 
 <body>
+    <div class="preloader">
+        <div class="preloader-wrapper">
+            <div class="loadingio-spinner-spinner-l6xrhkoxls">
+                <div class="ldio-l4uh8zaln8o">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+        </div>
+    </div>
     <section>
         <div class="menu"><i class="fa-solid fa-bars"></i></div>
+
         <div class="showcase">
             <div class="showcase__content-wrapper">
                 <div class="showcase__content">
@@ -41,8 +55,10 @@
                 </div>
             </div>
         </div>
+
         <video src="videos/smoke-background-optimized.mp4" class="showcase__video" autoplay loop muted></video>
         <div class="f_swipe"></div>
+
         <div class="navigation">
             <button class="navigation__component" id="about_btn">
                 <i class="fa-solid fa-file"></i>
@@ -80,7 +96,7 @@
     </section>
     <div class="attention">Does not support resolutions less than 550px</div>
     <script src="libs/swiper/swiper-bundle.min.js"></script>
-    <script src="js/script.js"></script>
+    <script src="js/script.js" defer></script>
 </body>
 
 </html>
