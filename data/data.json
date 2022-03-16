@@ -165,7 +165,21 @@
             "css3": true,
             "js": true,
             "mobileVersion": true,
-            "scss": false,
+            "scss": true,
+            "less": false
+        },
+        {
+            "id": 13,
+            "type": "Landing Page",
+            "show": true,
+            "ProjectName": "Parcel",
+            "sourceUrl": "https://retdes.github.io/Parcel/",
+            "imgUrl": "./images/webp/13.webp",
+            "html5": true,
+            "css3": true,
+            "js": true,
+            "mobileVersion": true,
+            "scss": true,
             "less": false
         }
     ],
