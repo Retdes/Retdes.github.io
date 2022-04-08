@@ -4517,7 +4517,7 @@ var calc = function calc(size, material, options, promocode, result) {
   var getValue = function getValue(path, context) {
     var x = context.target;
     calcFunc('true');
-    Object(_services_requests__WEBPACK_IMPORTED_MODULE_2__["getResource"])(_services_sources__WEBPACK_IMPORTED_MODULE_1__["calcUrl"] + path).then(function (res) {
+    Object(_services_requests__WEBPACK_IMPORTED_MODULE_2__["getResource"])(_services_sources__WEBPACK_IMPORTED_MODULE_1__["calcUrl"]).then(function (res) {
       return changer(x, res);
     }).catch(function (error) {
       calcFunc('error');
@@ -4525,7 +4525,7 @@ var calc = function calc(size, material, options, promocode, result) {
     });
 
     function changer(context, requests) {
-      requests.forEach(function (item, i) {
+      requests[path].forEach(function (item, i) {
         if (item.value === null) {
           context.children[i].value = '';
         } else {
@@ -4578,7 +4578,62 @@ var calc = function calc(size, material, options, promocode, result) {
   });
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (calc);
+/* harmony default export */ __webpack_exports__["default"] = (calc); // import { calcUrl } from "../services/sources";
+// import { getResource } from "../services/requests";
+// const calc = (size, material, options, promocode, result) => {
+//     const sizeBlock = document.querySelector(size),
+//         materialBlock = document.querySelector(material),
+//         optionsBlock = document.querySelector(options),
+//         promocodeBlock = document.querySelector(promocode),
+//         resultBlock = document.querySelector(result);
+//     let sum = 0;
+//     const getValue = (path, context) => {
+//         let x = context.target;
+//         calcFunc('true');
+//         getResource(calcUrl + path)
+//             .then(res => changer(x, res))
+//             .catch(error => {
+//                 calcFunc('error')
+//                 console.log(error)
+//             });
+//         function changer(context, requests) {
+//             requests.forEach((item, i) => {
+//                 if (item.value === null) {
+//                     context.children[i].value = '';
+//                 } else {
+//                     context.children[i].value = item.value;
+//                 }
+//             });
+//             calcFunc();
+//         }
+//     };
+//     const calcFunc = (loading = false) => {
+//         switch (loading) {
+//             case 'true':
+//                 resultBlock.textContent = 'Загрузка...';
+//                 return;
+//             case 'error':
+//                 resultBlock.textContent = 'Произошла Ошибка...';
+//                 return;
+//             default:
+//                 resultBlock.textContent = 'default...';
+//                 break;
+//         }
+//         sum = Math.round((+sizeBlock.value) * (+materialBlock.value) + (+optionsBlock.value));
+//         if (sizeBlock.value == '' || materialBlock.value == '') {
+//             resultBlock.textContent = "Пожалуйста, выберите размер и материал картины";
+//         } else if (promocodeBlock.value === 'IWANTPOPART') {
+//             resultBlock.textContent = Math.round(sum * 0.7);
+//         } else {
+//             resultBlock.textContent = sum;
+//         }
+//     };
+//     sizeBlock.addEventListener('change', (e) => getValue('size', e));
+//     materialBlock.addEventListener('change', (e) => getValue('material', e));
+//     optionsBlock.addEventListener('change', (e) => getValue('options', e));
+//     promocodeBlock.addEventListener('input', () => calcFunc());
+// };
+// export default calc;
 
 /***/ }),
 
@@ -5292,8 +5347,8 @@ var showMoreStyles = function showMoreStyles(trigger, wrapper) {
   });
 
   function createCards(response) {
-    // console.log(response);
-    response.forEach(function (_ref) {
+    console.log(response["styles"]);
+    response["styles"].forEach(function (_ref) {
       var src = _ref.src,
           title = _ref.title,
           link = _ref.link;
@@ -5489,8 +5544,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "more", function() { return more; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "designer", function() { return designer; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "question", function() { return question; });
-var calcUrl = 'https://retdes.github.io/Picture/assets/calc.json',
-    more = 'https://retdes.github.io/Picture/assets/db.json/styles',
+var calcUrl = 'https://retdes.github.io/pages/Picture/assets/calc.json',
+    more = 'https://retdes.github.io/pages/Picture/assets/db.json',
     designer = 'assets/server.php',
     question = 'assets/question.php';
 
