@@ -4949,8 +4949,10 @@ var forms = function forms() {
       Object(_services_requests__WEBPACK_IMPORTED_MODULE_7__["postData"])(api, formData).then(function (res) {
         // console.log(api);
         // console.log(res);
-        statusImg.setAttribute('src', messages.ok);
-        textMessage.textContent = messages.success;
+        // statusImg.setAttribute('src', messages.ok);
+        statusImg.setAttribute('src', messages.fail); // textMessage.textContent = messages.success;
+
+        textMessage.textContent = messages.failure;
       }).catch(function () {
         statusImg.setAttribute('src', messages.fail);
         textMessage.textContent = messages.failure;
@@ -5347,7 +5349,7 @@ var showMoreStyles = function showMoreStyles(trigger, wrapper) {
   });
 
   function createCards(response) {
-    console.log(response["styles"]);
+    // console.log(response["styles"]);
     response["styles"].forEach(function (_ref) {
       var src = _ref.src,
           title = _ref.title,
@@ -5466,26 +5468,18 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var postData = function postData(url, data) {
-  var res;
   return regeneratorRuntime.async(function postData$(_context) {
     while (1) {
       switch (_context.prev = _context.next) {
         case 0:
-          _context.next = 2;
-          return regeneratorRuntime.awrap(fetch(url, {
-            method: 'POST',
-            body: data
-          }));
+          // let res = await fetch(url, {
+          //     method: 'POST',
+          //     body: data
+          // });
+          // return await res.text();
+          alert("This feature is currently not working (;;;・_・) ");
 
-        case 2:
-          res = _context.sent;
-          _context.next = 5;
-          return regeneratorRuntime.awrap(res.text());
-
-        case 5:
-          return _context.abrupt("return", _context.sent);
-
-        case 6:
+        case 1:
         case "end":
           return _context.stop();
       }
