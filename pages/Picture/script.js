@@ -4357,6 +4357,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_accordion__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules/accordion */ "./src/js/modules/accordion.js");
 /* harmony import */ var _modules_burger__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./modules/burger */ "./src/js/modules/burger.js");
 /* harmony import */ var _modules_scrolling__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./modules/scrolling */ "./src/js/modules/scrolling.js");
+/* harmony import */ var _modules_drop__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./modules/drop */ "./src/js/modules/drop.js");
 
 
 
@@ -4364,6 +4365,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
  // import filter from './modules/filter';
+
 
 
 
@@ -4387,6 +4389,7 @@ window.addEventListener('DOMContentLoaded', function () {
   Object(_modules_accordion__WEBPACK_IMPORTED_MODULE_9__["default"])('.accordion-heading');
   Object(_modules_burger__WEBPACK_IMPORTED_MODULE_10__["default"])('.burger-menu', '.burger');
   Object(_modules_scrolling__WEBPACK_IMPORTED_MODULE_11__["default"])('.pageup');
+  Object(_modules_drop__WEBPACK_IMPORTED_MODULE_12__["default"])();
 });
 
 /***/ }),
@@ -4513,11 +4516,12 @@ var calc = function calc(size, material, options, promocode, result) {
 
   var getValue = function getValue(path, context) {
     var x = context.target;
-    calcFunc(true);
+    calcFunc('true');
     Object(_services_requests__WEBPACK_IMPORTED_MODULE_2__["getResource"])(_services_sources__WEBPACK_IMPORTED_MODULE_1__["calcUrl"] + path).then(function (res) {
       return changer(x, res);
     }).catch(function (error) {
-      return console.log(error);
+      calcFunc('error');
+      console.log(error);
     });
 
     function changer(context, requests) {
@@ -4535,9 +4539,18 @@ var calc = function calc(size, material, options, promocode, result) {
   var calcFunc = function calcFunc() {
     var loading = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
 
-    if (loading) {
-      resultBlock.textContent = 'Loading...';
-      return;
+    switch (loading) {
+      case 'true':
+        resultBlock.textContent = 'Загрузка...';
+        return;
+
+      case 'error':
+        resultBlock.textContent = 'Произошла Ошибка...';
+        return;
+
+      default:
+        resultBlock.textContent = 'default...';
+        break;
     }
 
     sum = Math.round(+sizeBlock.value * +materialBlock.value + +optionsBlock.value);
@@ -4609,6 +4622,86 @@ var checkTextInputs = function checkTextInputs(selector) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (checkTextInputs);
+
+/***/ }),
+
+/***/ "./src/js/modules/drop.js":
+/*!********************************!*\
+  !*** ./src/js/modules/drop.js ***!
+  \********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var core_js_modules_web_dom_collections_for_each__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/web.dom-collections.for-each */ "./node_modules/core-js/modules/web.dom-collections.for-each.js");
+/* harmony import */ var core_js_modules_web_dom_collections_for_each__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_dom_collections_for_each__WEBPACK_IMPORTED_MODULE_0__);
+
+
+var drop = function drop() {
+  // drag
+  // dragend
+  // dragenter
+  // dragexit
+  // dragleave
+  // dragover
+  // dragstart
+  // drop
+  var fileInputs = document.querySelectorAll('[name="upload"]');
+  ['dragenter', 'dragleave', 'dragover', 'drop'].forEach(function (eventName) {
+    fileInputs.forEach(function (input) {
+      input.addEventListener(eventName, preventDefaults, false);
+    });
+  });
+
+  function preventDefaults(e) {
+    e.preventDefault();
+    e.stopPropagation();
+  }
+
+  function highlight(item) {
+    item.closest('.file_upload').style.border = '5px solid yellow';
+    item.closest('.file_upload').style.backgroundColor = 'rgba(0, 0, 0, .7)';
+  }
+
+  function unhighlight(item) {
+    item.closest('.file_upload').style.border = 'none';
+
+    if (item.closest('.calc-form')) {
+      item.closest('.file_upload').style.backgroundColor = '#fff';
+    } else if (item.closest('.row')) {
+      item.closest('.file_upload').style.backgroundColor = '#f7e7e6';
+    } else {
+      item.closest('.file_upload').style.backgroundColor = '#ededed';
+    }
+  }
+
+  ['dragenter', 'dragover'].forEach(function (eventName) {
+    fileInputs.forEach(function (input) {
+      input.addEventListener(eventName, function () {
+        return highlight(input);
+      }, false);
+    });
+  });
+  ['dragleave', 'drop'].forEach(function (eventName) {
+    fileInputs.forEach(function (input) {
+      input.addEventListener(eventName, function () {
+        return unhighlight(input);
+      }, false);
+    });
+  }); // fileInputs.forEach(input => {
+  //     input.addEventListener('drop', (e) => {
+  //         input.files = e.dataTransfer.files;
+  //         let dots;
+  //         const arr = input.files[0].name.split('.');
+  //         arr[0].length > 6 ? dots = "..." : dots = '.';
+  //         const name = arr[0].substring(0, 6) + dots + arr[1];
+  //         input.previousElementSibling.textContent = name;
+  //     });
+  // });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (drop);
 
 /***/ }),
 
@@ -4729,19 +4822,38 @@ var forms = function forms() {
       item.previousElementSibling.textContent = 'Файл не выбран...';
     });
     select.forEach(function (item) {
+      if (!item) return;
       item.selectedIndex = 0;
     });
     calcPrice.textContent = 'Для расчета нужно выбрать размер картины и материал картины';
   };
 
-  upload.forEach(function (item) {
-    item.addEventListener('input', function () {
-      console.log(item.files[0]);
-      var dots;
-      var arr = item.files[0].name.split('.');
-      arr[0].length > 6 ? dots = "..." : dots = '.';
-      var name = arr[0].substring(0, 6) + dots + arr[1];
-      item.previousElementSibling.textContent = name;
+  ['drop', 'input'].forEach(function (events) {
+    upload.forEach(function (item) {
+      item.addEventListener(events, function (e) {
+        // console.log(events);
+        if (events == 'drop') {
+          // console.log(e.dataTransfer);
+          item.files = e.dataTransfer.files;
+        }
+
+        var dots;
+        if (!item.files[0]) return; // If you cancel the file download
+
+        var arr = item.files[0].name.split('.');
+        arr[0].length > 6 ? dots = "..." : dots = '.';
+        var name = arr[0].substring(0, 6) + dots + arr[1];
+        item.previousElementSibling.textContent = name;
+
+        if (item.closest('.main')) {
+          var formData = new FormData();
+          formData.append(item.getAttribute('name'), item.files[0]);
+          Object(_services_requests__WEBPACK_IMPORTED_MODULE_7__["postData"])(_services_sources__WEBPACK_IMPORTED_MODULE_6__["designer"], formData); // .then(res => console.log(res))
+          // .catch(error => console.log(error));
+
+          clearInputs();
+        }
+      });
     });
   });
   form.forEach(function (item) {
@@ -4765,7 +4877,6 @@ var forms = function forms() {
       var api;
       calcForm.children.forEach(function (item) {
         if (item.tagName === "SELECT") {
-          console.log(item);
           formData.append(item.getAttribute('id'), item.selectedIndex);
         }
 
@@ -4781,8 +4892,8 @@ var forms = function forms() {
       }
 
       Object(_services_requests__WEBPACK_IMPORTED_MODULE_7__["postData"])(api, formData).then(function (res) {
-        console.log(api);
-        console.log(res);
+        // console.log(api);
+        // console.log(res);
         statusImg.setAttribute('src', messages.ok);
         textMessage.textContent = messages.success;
       }).catch(function () {
@@ -5181,7 +5292,7 @@ var showMoreStyles = function showMoreStyles(trigger, wrapper) {
   });
 
   function createCards(response) {
-    console.log(response);
+    // console.log(response);
     response.forEach(function (_ref) {
       var src = _ref.src,
           title = _ref.title,
@@ -5216,6 +5327,7 @@ var sliders = function sliders(slides, dir, prev, next) {
   var items = document.querySelectorAll(slides),
       prevBtn = document.querySelector(prev),
       nextBtn = document.querySelector(next);
+  if (!items) return;
 
   function showSlides(n) {
     if (n > items.length) {
@@ -5260,13 +5372,13 @@ var sliders = function sliders(slides, dir, prev, next) {
     setInterval(function () {
       plusSlides(1);
       items[slideIndex - 1].classList.add('slideInDown');
-    }, 3000);
+    }, 10000);
   } else {
     setInterval(function () {
       plusSlides(1);
       items[slideIndex - 1].classList.remove('slideInRight');
       items[slideIndex - 1].classList.add('slideInLeft');
-    }, 3000);
+    }, 10000);
   }
 };
 
@@ -5377,8 +5489,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "more", function() { return more; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "designer", function() { return designer; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "question", function() { return question; });
-var calcUrl = 'http://localhost:5502/',
-    more = 'http://localhost:5501/styles',
+var calcUrl = 'https://retdes.github.io/Picture/assets/calc.json',
+    more = 'https://retdes.github.io/Picture/assets/db.json/styles',
     designer = 'assets/server.php',
     question = 'assets/question.php';
 
