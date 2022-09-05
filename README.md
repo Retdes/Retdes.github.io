@@ -1,0 +1,1 @@
+## This version of the resource is outdated, you can visit by on this link: [fwrelik.com](https://fwrelik.com)
